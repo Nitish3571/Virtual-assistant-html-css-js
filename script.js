@@ -7,8 +7,7 @@ function speak(text){
     text_speech.rate = 1
     text_speech.pitch = 1
     text_speech.volume = 1
-    text_speech.lang = 'hi-IN';
-    // text_speech.lang = 'hi-GB';
+    text_speech.lang = 'hi-GB';
     window.speechSynthesis.speak(text_speech)
 }
 
@@ -37,6 +36,7 @@ recognition.onresult = (e) => {
     let transcript = e.results[current][0].transcript;
     content.innerText = transcript
     takeCommand(transcript.toLowerCase());
+    
 }
 
 btn.addEventListener('click', ()=>{
@@ -57,17 +57,37 @@ function takeCommand(message){
     else if(message.includes("ya good") || message.includes("ya great work") || message.includes("great work")){
         speak("Thank you so much, Have a nice day");
     }
-    else if(message.includes("ashish") || message.includes("ashish")){
+    else if(message.includes("ashish") || message.includes("buckland")){
         speak("Ha, Ham jante hai Ashish Sharma ko wo betichod hai, o hamesha vimal khata hai isliye uska nike name vimal hai");
     }
-    else if(message.includes("open youtube") || message.includes("start youtube")){
+    else if(message.includes("pavandeep") || message.includes("pawandeep")){
+        speak("Ha, Ham Pavandeep ko jante hae wo abhi b tech computer course kar rha hai or abhi o company me as a developer kam kar rha hai, uske pass ek girl friend bhi hai. ager or kuchh janana hai to please contact for 9798949232 ");
+    }
+    else if(message.includes("open youtube") || message.includes("youtube")){
         window.open('https://www.youtube.com/')
     }
-    else if(message.includes("open facebook") || message.includes("start facebook")){
+    else if(message.includes("open facebook") || message.includes("facebook")){
         window.open('https://www.facebook.com/')
     }
-    else if(message.includes("open instagram") || message.includes("start instagram")){
+    else if(message.includes("open instagram") || message.includes("instagram")){
         window.open('https://www.instagram.com/')
+    }
+    else if(message.includes("open linkedin") || message.includes("linkedin")){
+        window.open('https://linkedin.com/')
+    }
+    else if(message.includes("open calculator") || message.includes("calculator")){
+        window.open('calculator://')
+    }
+    else if(message.includes("open whatsapp") || message.includes("whatsapp")){
+        window.open('whatsapp://')
+    }
+    else if(message.includes("time")){
+        let time=new Date().toLocaleString(undefined, {hour:'numeric',minute:'numeric'})
+        speak(time);
+    }
+    else if(message.includes("date")){
+        let time=new Date().toLocaleString(undefined, {day:'numeric',month:'numeric',year:'numeric'})
+        speak(time);
     }
     else{
         window.open(`https://www.google.com/search?q=${message}` )
