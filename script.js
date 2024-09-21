@@ -66,51 +66,21 @@ function takeCommand(message){
     else if(message.includes("open youtube") || message.includes("youtube")){
         window.open('https://www.youtube.com/')
     }
-    // else if(message.includes("open facebook") || message.includes("facebook")){
-    //     window.open('https://www.facebook.com/')
-    // }
-    // else if(message.includes("open instagram") || message.includes("instagram")){
-    //     window.open('https://www.instagram.com/')
-    // }
-    // else if(message.includes("open linkedin") || message.includes("linkedin")){
-    //     window.open('https://linkedin.com/')
-    // }
-    // else if(message.includes("open calculator") || message.includes("calculator")){
-    //     window.open('calculator://')
-    // }
-    // else if(message.includes("open whatsapp") || message.includes("whatsapp")){
-    //     window.open('whatsapp://')
-    // }
-
-    if (message.includes("open facebook") || message.includes("facebook")) {
-        // Try to open the Facebook app
-        window.location.href = 'fb://';
-        setTimeout(() => {
-            window.open('https://www.facebook.com/', '_blank'); // Fallback to Facebook website if the app is not installed
-        }, 1000);
+    else if(message.includes("open facebook") || message.includes("facebook")){
+        window.open('https://www.facebook.com/')
     }
-    else if (message.includes("open instagram") || message.includes("instagram")) {
-        // Try to open the Instagram app
-        window.location.href = 'instagram://';
-        setTimeout(() => {
-            window.open('https://www.instagram.com/', '_blank'); // Fallback to Instagram website if the app is not installed
-        }, 1000);
+    else if(message.includes("open instagram") || message.includes("instagram")){
+        window.open('https://www.instagram.com/')
     }
-    else if (message.includes("open whatsapp") || message.includes("whatsapp")) {
-        // Try to open the WhatsApp app
-        window.location.href = 'whatsapp://send';
-        setTimeout(() => {
-            window.open('https://web.whatsapp.com/', '_blank'); // Fallback to WhatsApp web if the app is not installed
-        }, 1000);
+    else if(message.includes("open linkedin") || message.includes("linkedin")){
+        window.open('https://linkedin.com/')
     }
-    else if (message.includes("open linkedin") || message.includes("linkedin")) {
-        // Try to open the LinkedIn app
-        window.location.href = 'linkedin://';
-        setTimeout(() => {
-            window.open('https://www.linkedin.com/', '_blank'); // Fallback to LinkedIn website if the app is not installed
-        }, 1000);
+    else if(message.includes("open calculator") || message.includes("calculator")){
+        window.open('calculator://')
     }
-    
+    else if(message.includes("open whatsapp") || message.includes("whatsapp")){
+        window.open('whatsapp://')
+    }
     else if(message.includes("time")){
         let time=new Date().toLocaleString(undefined, {hour:'numeric',minute:'numeric'})
         speak(time);
